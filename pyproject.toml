@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+pythonpath = ["src", ".", "tests"]
+testpaths = ["tests"]
+addopts = "-q -p no:cacheprovider"   # 不写 .pytest_cache，避免沙箱/权限上下文交叉污染

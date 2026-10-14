@@ -1,0 +1,13 @@
+# ---- 运行时依赖 ----
+streamlit>=1.40          # 网页界面（本机已有 1.58）
+chromadb>=1.0            # 本地向量数据库（自带 SQLite 持久化，无需起服务）
+pypdf>=5.0               # PDF 文本抽取（纯 Python，无编译依赖）
+# 注：Word(.docx) 解析用的是标准库 zipfile + xml.etree，不装 python-docx，
+#     见 src/pdfrag/docx_loader.py。
+
+# ---- 开发 / 测试 ----
+pytest>=8.0
+
+# ---- 可选：本地 Embedding 后端（EMBEDDING_BACKEND=local 时安装）----
+# 优点：完全离线、不花 API 费用；缺点：首次要下载约 2GB（torch）+ 模型权重
+# sentence-transformers>=5.0
